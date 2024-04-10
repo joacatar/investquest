@@ -1,0 +1,13 @@
+<h1>Please log in</h1>
+
+{% for message in get_flashed_messages() %}
+<h2>{{ message }}</h2>
+{% endfor %}
+
+<form action="" method="post">
+    <input type="text" placeholder="Username" name="username"
+    value="{{ request.form.username }}">
+    <input type="password" placeholder="Password" name="password"
+    value="{{ request.form.password }}">
+    <input type="submit" value="Login">
+</form>

@@ -1,0 +1,23 @@
+<h1>Please enter your ticker data</h1>
+
+
+<form action="your-ticker" method="post">
+  <label for="stock">Stock Ticker</label>
+  <input type="text" name="stock" value="" required>
+  <br>
+  <label for="date_bought">Price Bought</label>
+  <input type="number" name="date_bought" value="" required>
+  <br>
+  <label for="date_sold">Price Sold</label>
+  <input type="number" name="date_sold" value="" required>
+  <br>
+  <input type="submit" value="Shorten">
+</form>
+
+
+<form action="your-ticker" method="post" enctype="multipart/form-data">
+  <label for="file">Upload CSV Data</label>
+  <input type="file" name="file" value="" required>
+  <br>
+  <input type="submit" value="Shorten">
+</form>
