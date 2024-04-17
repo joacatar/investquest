@@ -35,11 +35,11 @@
         {% if stock_info %}
             <dl>
                 <dt>Current Price:</dt>
-                <dd>${{ stock_info.get('regularMarketPrice', 'N/A') }}</dd>
+                <dd>${{ stock_info.regularMarketPrice }}</dd>
                 <dt>Previous Close:</dt>
-                <dd>${{ stock_info.get('previousClose', 'N/A') }}</dd>
+                <dd>${{ stock_info.previousClose }}</dd>
                 <dt>Market Cap:</dt>
-                <dd>${{ stock_info.get('marketCap', 'N/A') | int | format(',d') }}</dd>
+                <dd>${{ stock_info.marketCap }}</dd>
             </dl>
         {% else %}
             <p>Stock information could not be loaded.</p>
