@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stock Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        h1 {
+            color: #0056b3;
+        }
+        .stock-info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        dt {
+            font-weight: bold;
+        }
+        dd {
+            margin: 0 0 20px 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Stock Information: {{ symbol }}</h1>
+    <div class="stock-info">
+        {% if stock_info %}
+            <dl>
+                <dt>Current Price:</dt>
+                <dd>${{ stock_info.get('regularMarketPrice', 'N/A') }}</dd>
+                <dt>Previous Close:</dt>
+                <dd>${{ stock_info.get('previousClose', 'N/A') }}</dd>
+                <dt>Market Cap:</dt>
+                <dd>${{ stock_info.get('marketCap', 'N/A') | int | format(',d') }}</dd>
+            </dl>
+        {% else %}
+            <p>Stock information could not be loaded.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
